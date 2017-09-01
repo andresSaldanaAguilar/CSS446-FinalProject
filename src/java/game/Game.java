@@ -9,10 +9,6 @@ import java.util.Collections;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Caleb Davis
- */
 public class Game {
     
     private Cell[][] cells;
@@ -23,7 +19,7 @@ public class Game {
     public final static String IMAGE_PATH = "assets/img/";
     
     /**
-     * Default constructor
+     * onstructor del tablero
      */
     public Game() {
         cells = new Cell[COLS][ROWS];
@@ -37,8 +33,8 @@ public class Game {
     }
     
     /**
-     * Return a random position of an available (ie empty) cell
-     * @return position of an available cell
+     * LLena una lista con las celdas disponibles y las revuelve, devolviendo
+     * el primero que encuentre
      */
     public int getRandomAvailableCell() {
         ArrayList<Integer> availableCells = new ArrayList<>();
@@ -55,8 +51,7 @@ public class Game {
     }
     
     /**
-     * Get if there is still at least one available cell
-     * @return if there is still an empty cell
+     * Recorre el tablero en busca de celdas disponibles
      */
     public boolean hasAvailableCell() {
         for (int i=0; i<ROWS; i++) {

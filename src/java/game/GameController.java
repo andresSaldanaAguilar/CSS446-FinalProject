@@ -30,12 +30,16 @@ public class GameController {
      *
      * @param player
      */
+    
     public void beginWithUser(boolean player) {
-        beginWithUser = player;
+        //es el primer juego o hubo empate y es al azar el inicio de turno
+        beginWithUser = getRandomBoolean();
+        //alguien gano y debemos darle el inicio de turno
+        
     }
 
     /**
-     * Start a new game
+     * Empezamos un juego nuevo
      */
     public void startGame() {
         game = new Game();
@@ -106,6 +110,7 @@ public class GameController {
     public Player getWinner() {
         return winner;
     }
+    
 
     /**
      * Check if game is ended by searching a line or if cell are anymore available
@@ -125,4 +130,8 @@ public class GameController {
             winner = Player.NoBody;
         }
     }
+    
+    public static boolean getRandomBoolean() {
+       return Math.random() < 0.5;
+   }
 }

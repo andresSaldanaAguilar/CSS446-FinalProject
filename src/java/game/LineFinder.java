@@ -7,10 +7,6 @@ package game;
 import static game.Game.COLS;
 import static game.Game.ROWS;
 
-/**
- *
- * @author Caleb Davis
- */
 public class LineFinder {
 
     private Game game;

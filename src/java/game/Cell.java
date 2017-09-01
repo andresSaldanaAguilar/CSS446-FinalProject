@@ -4,10 +4,7 @@
  */
 package game;
 
-/**
- *
- * @author Caleb Davis 
- */
+
 class Cell {
     
     private Player player;

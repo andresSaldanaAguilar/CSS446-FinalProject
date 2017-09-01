@@ -1,11 +1,6 @@
-<%-- 
-    Document   : index
-    Created on : April 28, 2015
-    Author     : Caleb Davis
---%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
     <head>
         <jsp:include page="/WEB-INF/head.jsp">
             <jsp:param name="title" value="Caleb Davis" />

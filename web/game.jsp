@@ -1,8 +1,3 @@
-<%-- 
-    Document   : game
-    Created on : April 28, 2015
-    Author     : Caleb Davis
---%>
 <%@page import="game.Game"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,23 +18,25 @@
             </div>
         
         <%
+            //muestra quien gano si el juego termino
             if (game.isGameEnded()) {
                 out.println("<div class=\"row\"><div class=\"col-md-6 col-md-offset-3 text-center\">");
                 switch (game.getWinner()) {
                     case User:
-                        out.println("<div class=\"alert alert-success\"><p><span class=\"glyphicon glyphicon-thumbs-up text-lg\"></span></p>You Win!</div>");
+                        out.println("<div class=\"alert alert-success\"><p><span class=\"glyphicon glyphicon-thumbs-up text-lg\"></span></p>Tu ganas!</div>");
                         break;
                     case Computer:
-                        out.println("<div class=\"alert alert-danger\"><p><span class=\"glyphicon glyphicon-thumbs-down text-lg\"></span></p>You Lose!</div>");
+                        out.println("<div class=\"alert alert-danger\"><p><span class=\"glyphicon glyphicon-thumbs-down text-lg\"></span></p>Perdiste!</div>");
                         break;
                     case NoBody:
                     default:
-                        out.println("<div class=\"alert alert-warning\">Tie!</div>");
+                        out.println("<div class=\"alert alert-warning\">Empate!</div>");
                 }
                 out.println("</div></div>");
             }
         %>
 
+        <!--dibuja el tablero-->
         <table class="ttt-table">
             <%
                 int position = 1;
@@ -55,7 +52,7 @@
 
         <%
             if (game.isGameEnded()) {
-                out.println("<div class=\"espace-top-lg row\"><div class=\"col-md-6 col-md-offset-3\"><a href=\"./\" class=\"btn btn-default btn-lg btn-block\">Play Again!</a></div></div>");
+                out.println("<div class=\"espace-top-lg row\"><div class=\"col-md-6 col-md-offset-3\"><a href=\"./\" class=\"btn btn-default btn-lg btn-block\">Jugar Denuevo?</a></div></div>");
             }
         %>
         
