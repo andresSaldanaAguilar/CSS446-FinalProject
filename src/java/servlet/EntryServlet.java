@@ -80,11 +80,10 @@ public class EntryServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        // get game controller
+        // conseguimos al controlador del juego
         GameController gc = ServletHelper.getGameController(request);
-        
-        // who wants to start playing
-        boolean userBegins = request.getParameter("user") != null;
+        boolean userBegins = request.getParameter("user").equals("circle");
+
         gc.beginWithUser(userBegins);
         
         // initialize game

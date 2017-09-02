@@ -1,7 +1,3 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 package game;
 
 import java.util.logging.Level;
@@ -131,6 +127,7 @@ public class GameController {
         }
     }
     
+    /* metodo de radomize */
     public static boolean getRandomBoolean() {
        return Math.random() < 0.5;
    }

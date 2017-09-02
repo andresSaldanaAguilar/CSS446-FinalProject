@@ -4,21 +4,23 @@
  */
 package game;
 
-
+//
 class Cell {
     
     private Player player;
     
     public static final String IMAGE_NOBODY = "";
-    public static final String IMAGE_USER = "&times;";
-    public static final String IMAGE_COMPUTER = "o";
+    public String IMAGE_USER;
+    public String IMAGE_COMPUTER;  
+    public static String IMAGE_CROSS = "&times;";
+    public static String IMAGE_CIRCLE = "o";
     
     public static final String CSS_NOBODY = "ttt-nobody";
     public static final String CSS_USER = "ttt-user";
     public static final String CSS_COMPUTER = "ttt-computer";
     
     public Cell() {
-        this.player = Player.NoBody;
+        this.player = Player.NoBody;     
     }
     
     public boolean isAvailable() {
@@ -59,6 +61,15 @@ class Cell {
         }
         out.append("</span>");
         return out.toString();
+    }
+    
+    public void setCrossUser(){
+        this.IMAGE_USER=IMAGE_CROSS;
+        this.IMAGE_COMPUTER=IMAGE_CIRCLE;
+    }
+    public void setCircleUser(){
+        this.IMAGE_USER=IMAGE_CIRCLE;
+        this.IMAGE_COMPUTER=IMAGE_CROSS;
     }
     
 }

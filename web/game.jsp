@@ -9,12 +9,11 @@
     </head>
     <jsp:useBean id="game" scope="session" class="game.GameController" />
     <body>
-        <jsp:include page="/WEB-INF/menu_header.jsp" />
         <div class="container">
             
             <div class="page-header">
-                <a href="./" class="pull-right"><img src="assets/img/favicon.png" alt="&times" /></a>
-                <h1>Tic Tac Toe <small>the game</small></h1>
+                <h4><a href="./" class="pull-right" style="color:darkslategray"><i class="fa fa-home fa-3x" aria-hidden="true"></i></a></h4>
+                <h1 style="font-family:Pacifico">Tic Tac Toe</h1>
             </div>
         
         <%
@@ -23,20 +22,20 @@
                 out.println("<div class=\"row\"><div class=\"col-md-6 col-md-offset-3 text-center\">");
                 switch (game.getWinner()) {
                     case User:
-                        out.println("<div class=\"alert alert-success\"><p><span class=\"glyphicon glyphicon-thumbs-up text-lg\"></span></p>Tu ganas!</div>");
+                        out.println("<div class=\"alert alert-success\"><p><span class=\"glyphicon glyphicon-thumbs-up text-lg\"></span></p>You win!</div>");
                         break;
                     case Computer:
-                        out.println("<div class=\"alert alert-danger\"><p><span class=\"glyphicon glyphicon-thumbs-down text-lg\"></span></p>Perdiste!</div>");
+                        out.println("<div class=\"alert alert-danger\"><p><span class=\"glyphicon glyphicon-thumbs-down text-lg\"></span></p>You lose!</div>");
                         break;
                     case NoBody:
                     default:
-                        out.println("<div class=\"alert alert-warning\">Empate!</div>");
+                        out.println("<div class=\"alert alert-warning\">Tie!</div>");
                 }
                 out.println("</div></div>");
             }
         %>
 
-        <!--dibuja el tablero-->
+        <!--dibuja el tablero 3x3-->
         <table class="ttt-table">
             <%
                 int position = 1;
@@ -52,7 +51,8 @@
 
         <%
             if (game.isGameEnded()) {
-                out.println("<div class=\"espace-top-lg row\"><div class=\"col-md-6 col-md-offset-3\"><a href=\"./\" class=\"btn btn-default btn-lg btn-block\">Jugar Denuevo?</a></div></div>");
+                out.println("<div class=\"espace-top-lg row\"><div class=\"col-md-6 col-md-offset-3\"><a href=\"./\" class=\"btn btn-danger btn-lg btn-block\">Exit</a></div></div>");
+                out.println("<form action=\"./play\" method=\"post\"><div class=\"espace-top-lg row\"><div class=\"col-md-6 col-md-offset-3\"><button type=\"submit\" name=\"user\" class=\"btn btn-primary btn-lg btn-block\">Play again</button></div></div></form>");
             }
         %>
         
