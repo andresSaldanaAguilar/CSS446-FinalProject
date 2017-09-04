@@ -3,15 +3,10 @@ package game;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Caleb Davis
- */
 public class GameController {
-
     private boolean beginWithUser;
     private boolean isGameEnded;
-    private Game game;
+    public Game game;
     private LineFinder lineFinder;
     private Player winner;
     private int lastCellPlayedByComputer;
@@ -30,8 +25,16 @@ public class GameController {
     public void beginWithUser(boolean player) {
         //es el primer juego o hubo empate y es al azar el inicio de turno
         beginWithUser = getRandomBoolean();
-        //alguien gano y debemos darle el inicio de turno
-        
+        //alguien gano y debemos darle el inicio de turno 
+    }
+    
+    public void Circle(){
+        //game = new Game();
+        game.setCircle();
+    }
+    public void Cross(){
+        //game = new Game();
+        game.setCross();
     }
 
     /**
@@ -105,8 +108,7 @@ public class GameController {
 
     public Player getWinner() {
         return winner;
-    }
-    
+    } 
 
     /**
      * Check if game is ended by searching a line or if cell are anymore available

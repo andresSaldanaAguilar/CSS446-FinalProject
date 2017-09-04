@@ -38,6 +38,15 @@ class Cell {
             player = Player.Computer;
         }
     }
+    public void setCircleUser(){
+        this.IMAGE_USER=IMAGE_CIRCLE;
+        this.IMAGE_COMPUTER=IMAGE_CROSS;
+    }
+    public void setCrossUser(){
+        this.IMAGE_USER=IMAGE_CROSS;
+        this.IMAGE_COMPUTER=IMAGE_CIRCLE;
+    }
+    
     
     public String getImageHTML() {
         StringBuilder out = new StringBuilder();
@@ -62,14 +71,4 @@ class Cell {
         out.append("</span>");
         return out.toString();
     }
-    
-    public void setCrossUser(){
-        this.IMAGE_USER=IMAGE_CROSS;
-        this.IMAGE_COMPUTER=IMAGE_CIRCLE;
-    }
-    public void setCircleUser(){
-        this.IMAGE_USER=IMAGE_CIRCLE;
-        this.IMAGE_COMPUTER=IMAGE_CROSS;
-    }
-    
 }
