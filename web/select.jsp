@@ -14,7 +14,6 @@
                     <h1 style="font-family:Pacifico">Tic Tac Toe</h1>
                 </nav>
                 <div class="panel" align="center">
-                        <br><h1 align="center" style="color:darkslategray;font-family:Pacifico">Select your simbol</h1><br>
                         <h1 align="center" style="color:darkslategray; display:inline-block;padding-right:25%;"><i class="fa fa-circle-o fa-5x fa-border" aria-hidden="true"></i></h1>
                         <h1 align="center" style="color:darkslategray; display:inline-block"><i class="fa fa-times fa-5x fa-border" aria-hidden="true"></i></h1>
                         <br><br>

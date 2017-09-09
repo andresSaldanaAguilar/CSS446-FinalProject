@@ -84,17 +84,11 @@ public class EntryServlet extends HttpServlet {
         GameController gc = ServletHelper.getGameController(request);
         boolean userBegins = request.getParameter("user").equals("circle");
 
-        
         gc.beginWithUser(userBegins);
+        
         // initialize game
         gc.startGame();
         
-        if(userBegins==true){
-            gc.Circle();
-        }
-        else{
-            gc.Cross();
-        }
         // delegate 
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/game.jsp");
         rd.forward(request, response);

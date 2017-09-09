@@ -19,13 +19,15 @@ public class Game {
     public final static String IMAGE_PATH = "assets/img/";
     
     /**
-     * constructor del tablero
+     * onstructor del tablero
      */
     public Game() {
         cells = new Cell[COLS][ROWS];
+        int id = 0;
         for (int i=0; i<COLS; i++) {
             for (int j=0; j<ROWS; j++) {
                 cells[i][j] = new Cell();
+                id++;
             }
         }
     }
@@ -70,26 +72,6 @@ public class Game {
         return cells[p%COLS][p/ROWS];
     }
     
-    //asigna equis al jugador
-    public void setCross(){
-        for (int i=0; i<COLS; i++) {
-            for (int j=0; j<ROWS; j++) {
-                cells[i][j].setCrossUser();
-            }
-        }
-    }
-
-    //asigna circulo al jugador
-    public void setCircle(){
-        for (int i=0; i<COLS; i++) {
-            for (int j=0; j<ROWS; j++) {
-                cells[i][j].setCircleUser();
-            }
-        }
-    }
-    
-    
-    
     /**
      * Get the given cell with its coordinates
      * @param x place in horizontal table
@@ -99,7 +81,6 @@ public class Game {
     protected Cell getCell(int x, int y) {
         return cells[x][y];
     }
-    
     
     /**
      * Get the coordinates for a given position of a cell
@@ -135,7 +116,7 @@ public class Game {
      * @param position
      * @return partial html string to display a cell
      */
-    public String getCellHTML(int position, boolean displayLink){
+    public String getCellHTML(int position, boolean displayLink) {
         Cell c = getCell(position);
         StringBuilder out = new StringBuilder();
         // check if we need to add a link
@@ -150,5 +131,7 @@ public class Game {
         // do we need to close the link?
         if (c.isAvailable() && displayLink) { out.append("</a>"); }
         return out.toString();
-    }    
+    }
+    
+        
 }
