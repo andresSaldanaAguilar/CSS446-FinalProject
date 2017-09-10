@@ -19,14 +19,15 @@ class Cell {
     public static final String CSS_USER = "ttt-user";
     public static final String CSS_COMPUTER = "ttt-computer";
     
+    //constructor de la celda
     public Cell() {
         this.player = Player.NoBody;     
     }
-    
+    //retorna si esta disponible
     public boolean isAvailable() {
         return player == Player.NoBody;
     }
-    
+    //retorna el jugador de la celda
     public Player getPlayer() {
         return player;
     }
@@ -63,13 +64,19 @@ class Cell {
         return out.toString();
     }
     
-    public void setCrossUser(){
-        this.IMAGE_USER=IMAGE_CROSS;
-        this.IMAGE_COMPUTER=IMAGE_CIRCLE;
-    }
+    //setters de las fichas
     public void setCircleUser(){
         this.IMAGE_USER=IMAGE_CIRCLE;
         this.IMAGE_COMPUTER=IMAGE_CROSS;
     }
     
+    public void setCrossUser(){
+        this.IMAGE_USER=IMAGE_CROSS;
+        this.IMAGE_COMPUTER=IMAGE_CIRCLE;
+    }
+    //getter de las ficha del usuario 
+    public boolean isTokenUserCross(){
+        return IMAGE_USER.equals(IMAGE_CROSS);
+    }
+   
 }

@@ -7,16 +7,11 @@ package servlet;
 import game.GameController;
 import javax.servlet.http.HttpServletRequest;
 
-/**
- *
- * @author Caleb Davis
- */
+
 public abstract class ServletHelper {
     
     /**
-     * Get the current Game Controller of the session
-     * @param request
-     * @return game controller of the current session
+     * retorna el controlador del juego actual
      */
     public static GameController getGameController(HttpServletRequest request) {
         return (GameController) request.getSession(true).getAttribute("game");

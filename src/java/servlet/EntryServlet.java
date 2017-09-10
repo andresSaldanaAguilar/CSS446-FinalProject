@@ -14,10 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Caleb Davis
- */
+
 @WebServlet(name = "EntryServlet", urlPatterns = {"/play"})
 public class EntryServlet extends HttpServlet {
 
@@ -82,16 +79,23 @@ public class EntryServlet extends HttpServlet {
         
         // conseguimos al controlador del juego
         GameController gc = ServletHelper.getGameController(request);
-        boolean userBegins = request.getParameter("user").equals("circle");
-
-        gc.beginWithUser(userBegins);
+        boolean userBegins = request.getParameter("token").equals("circle");
         
+        gc.beginWithUser("NoBody");
         // initialize game
         gc.startGame();
         
+        if(userBegins==true){
+            gc.Circle();
+        }
+        else{
+            gc.Cross();
+        }
         // delegate 
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/game.jsp");
         rd.forward(request, response);
+        
+        
     }
 
     /**

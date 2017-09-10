@@ -19,7 +19,7 @@ public class Game {
     public final static String IMAGE_PATH = "assets/img/";
     
     /**
-     * onstructor del tablero
+     * Constructor del tablero
      */
     public Game() {
         cells = new Cell[COLS][ROWS];
@@ -108,7 +108,29 @@ public class Game {
         Logger.getLogger(Game.class.getName()).log(Level.FINE, ((playedByUser) ? "User" : "Computer") + " played cell: " + position);
         return true;
     }
-    
+
+    //asigna equis al jugador
+    public void setCross(){
+        for (int i=0; i<COLS; i++) {
+            for (int j=0; j<ROWS; j++) {
+                cells[i][j].setCrossUser();
+            }
+        }
+    }
+
+    //asigna circulo al jugador
+    public void setCircle(){
+        for (int i=0; i<COLS; i++) {
+            for (int j=0; j<ROWS; j++) {
+                cells[i][j].setCircleUser();
+            }
+        }
+    }
+    //retorna que ficha tiene el jugador, todas las
+    //celdas tienen la misma config. entonces solo necesitamos saber de una
+    public Boolean getToken(){
+        return cells[1][1].isTokenUserCross();
+    }
 
     
     /**

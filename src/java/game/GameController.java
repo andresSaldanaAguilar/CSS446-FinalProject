@@ -27,11 +27,17 @@ public class GameController {
      * @param player
      */
     
-    public void beginWithUser(boolean player) {
+    public void beginWithUser(String player) {
         //es el primer juego o hubo empate y es al azar el inicio de turno
-        beginWithUser = getRandomBoolean();
+        //beginWithUser = getRandomBoolean();
         //alguien gano y debemos darle el inicio de turno
-        
+        if(player.equals("User")){
+            beginWithUser = true;
+        }
+        else if(player.equals("Computer")){
+            beginWithUser = false;
+        }
+        else beginWithUser = getRandomBoolean();
     }
 
     /**
@@ -56,6 +62,19 @@ public class GameController {
         return isGameEnded;
     }
 
+    public void Circle(){
+        //game = new Game();
+        game.setCircle();
+    }
+    public void Cross(){
+        //game = new Game();
+        game.setCross();
+    }
+    
+    public Boolean Token(){
+        return game.getToken();
+    }
+    
     /**
      * Play a cell by an user
      *
