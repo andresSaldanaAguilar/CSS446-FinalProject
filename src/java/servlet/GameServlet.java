@@ -67,19 +67,19 @@ public class GameServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        // get game controller
+        // obtiene el controlador
         GameController gc = ServletHelper.getGameController(request);
 
         // get cell which wants to be played
         int position = Integer.parseInt(request.getParameter("cell"));
 
-        // user is playing a cell
+        // usuario juega una celda
         if (gc.playCellByUser(position)) {
-        // check if computer can play
+        // checa si la computadora puede jugar
             if (!gc.isGameEnded()) { gc.playCellByComputer(); }
         }
         
-        // if game is ended, we have a winner :)
+        // si el juego termino, tendremos un ganador
         if (gc.isGameEnded()) {
             Logger.getLogger(GameServlet.class.getName()).log(Level.INFO, gc.getWinner() + " won the game.");
         }

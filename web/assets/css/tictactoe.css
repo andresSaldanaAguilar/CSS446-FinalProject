@@ -56,6 +56,6 @@ body {
 }
 .ttt-table td a:hover .ttt-nobody:before {
     display: block;
-    content: "\00d7";
+    content: "--";
     line-height: 100px;
 }

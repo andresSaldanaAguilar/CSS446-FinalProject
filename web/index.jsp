@@ -17,7 +17,8 @@
             
         <!--cabecera-->
         <nav class="page-header">
-                    <h4><a href="howToPlay.jsp" class="pull-right" style="color:darkslategray"><i class="fa fa-question-circle fa-3x" aria-hidden="true"></i></a></h4>
+                    <a href="howToPlay.jsp" class="pull-right" style="color:darkslategray;" ><h1>Instrucciones</h1></a>
+
                     <h1 style="font-family:Pacifico">Tic Tac Toe</h1>            
         </nav>
             
@@ -25,7 +26,7 @@
                         <h1 align="center" style="color:darkslategray"><i class="fa fa-slack fa-5x" aria-hidden="true"></i></h1>
                         <h1 align="center" style="color:darkslategray"><i class="fa fa-hand-pointer-o fa-5x" aria-hidden="true"></i></h1>
                         <br><br>
-                        <a href="select.jsp" class="btn btn-default btn-lg btn-block" style="background-color:darkslategray;color:white">Play</a>
+                        <a href="select.jsp" class="btn btn-default btn-lg btn-block" style="background-color:darkslategray;color:white">Nueva Partida</a>
                 </div>
         </div>
         <!--PLantilla del footer-->

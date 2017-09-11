@@ -14,7 +14,7 @@
                           
                 <!--cabecera-->
                 <nav class="page-header">
-                    <h4><a href="./" class="pull-right" style="color:darkslategray"><i class="fa fa-home fa-3x" aria-hidden="true"></i></a></h4>
+                    <h4><a href="./" class="pull-right" style="color:darkslategray">Salir<i class="fa fa-home fa-3x" aria-hidden="true"></i></a></h4>
                     <h1 style="font-family:Pacifico">Tic Tac Toe</h1>
                 </nav>
                 
@@ -27,10 +27,10 @@
                         
                         <div class="btn-group btn-group-justified" role="group" aria-label="...">
                             <div class="btn-group" role="group">
-                              <button type="submit" name="token" value="circle" class="btn btn-default btn-lg" style="background-color:darkslategray;color:white">Circle</button>
+                              <button type="submit" name="token" value="circle" class="btn btn-default btn-lg" style="background-color:darkslategray;color:white">Circulo</button>
                             </div>
                             <div class="btn-group" role="group">
-                              <button type="submit" name="token" value="cross" class="btn btn-default btn-lg" style="background-color:darkslategray;color:white">Cross</button>
+                              <button type="submit" name="token" value="cross" class="btn btn-default btn-lg" style="background-color:darkslategray;color:white">Equis</button>
                             </div>
                         </div>    
                 </div>             
